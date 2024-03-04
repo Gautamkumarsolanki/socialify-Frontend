@@ -77,38 +77,75 @@ export default function SignIn() {
   }
 
   return (
-    <div className="signIn">
-      <div>
-        <div className="loginForm">
-          <h1>Socialify</h1>
-          <div>
-            <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
-          </div>
-          <div>
+    <>
+      <div class="container flex">
+        <div class="facebook-page flex"></div>
+        <div class="text">
+          <h1 className="singh1">Socialify</h1>
+          <p className="signp">
+            Connect with friends and the world around you on Socialify.
+          </p>
+        </div>
+        <div>
+          <div className="formsection">
+            <input
+              className="inputsingin"
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
             <input
               type="password"
+              className="inputsingin"
               name="password"
               id="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => { setPassword(e.target.value) }}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
+            <GoogleLogin
+              onSuccess={socialAuth}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+            />
+            <div style={{marginTop:"1rem"}} class="link">
+              <input
+                type="submit"
+                className="inputsingin"
+                style={{
+                  backgroundColor: "#0d65d9",
+                  color: "white",
+                  fontSize: "1.4rem",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                }}
+                id="login-btn"
+                onClick={() => {
+                  postData();
+                }}
+                value="Sign In"
+              />
+            </div>
           </div>
-          <GoogleLogin
-            onSuccess={socialAuth}
-            onError={() => {
-              console.log('Login Failed');
-            }}
-          />
-          <input type="submit" id="login-btn" onClick={() => { postData() }} value="Sign In" />
-        </div>
-        <div className="loginForm2">
-          Don't have an account ?
-          <Link to="/signup">
-            <span style={{ color: "blue", cursor: "pointer" }}>Sign Up</span>
-          </Link>
+
+          <div className="loginForm2">
+            Don't have an account ?
+            <Link to="/signup">
+              <span style={{ color: "blue", cursor: "pointer" }}>Sign Up</span>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+
+    </>
   );
 }
+

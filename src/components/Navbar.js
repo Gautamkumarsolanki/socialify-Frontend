@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import logo from "../img/navbarlogo.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
@@ -143,8 +144,17 @@ export default function Navbar({ login }) {
 
   return (
     <div className="navbar">
-      <h1 >Socialify</h1>
-      <ul className="nav-menu">{loginStatus()}</ul>
+      <img src={logo} alt="" />
+      <ul
+        className="nav-menu"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {loginStatus()}
+      </ul>
     </div>
   );
 }

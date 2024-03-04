@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import logo from "../img/navbarlogo.png";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -80,61 +81,104 @@ export default function SignUp() {
 	}
 
 	return (
-		<div className="signUp">
-			<div className="form-container">
-				<div className="form">
-					<h1>Socialify</h1>
-					<p className="loginPara">
-						Sign up to see photos and videos <br /> from your friends
+		<>
+			<div class="container flex">
+				<div class="facebook-page flex"></div>
+				<div class="text">
+					<h1 className="singh1">Socialify</h1>
+					<p className="signp">
+						Connect with friends and the world around you on Socialify.
 					</p>
-					<div>
-						<input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
-					</div>
-					<div>
-						<input type="text" name="name" id="name" placeholder="Full Name" value={name} onChange={((e) => { setName(e.target.value) })} />
-					</div>
-					<div>
+				</div>
+				<div>
+					<div className="formsection">
+						<input
+							type="email"
+							className="inputsingin"
+							name="email"
+							id="email"
+							value={email}
+							placeholder="Email"
+							onChange={(e) => {
+								setEmail(e.target.value);
+							}}
+						/>
 						<input
 							type="text"
+							className="inputsingin"
+							name="name"
+							id="name"
+							placeholder="Full Name"
+							value={name}
+							onChange={(e) => {
+								setName(e.target.value);
+							}}
+						/>
+						<input
+							type="text"
+							className="inputsingin"
 							name="username"
 							id="username"
 							placeholder="Username"
 							value={userName}
-							onChange={(e) => { setUserName(e.target.value) }}
+							onChange={(e) => {
+								setUserName(e.target.value);
+							}}
 						/>
-					</div>
-					<div>
 						<input
 							type="password"
+							className="inputsingin"
 							name="password"
 							id="password"
 							placeholder="Password"
 							value={password}
-							onChange={(e) => { setPassword(e.target.value) }}
+							onChange={(e) => {
+								setPassword(e.target.value);
+							}}
 						/>
+
+						<GoogleLogin
+							onSuccess={socialAuth}
+							onError={() => {
+								console.log("Login Failed");
+							}}
+						/>
+						<p
+							className="loginPara"
+							style={{ fontSize: "12px", margin: "3px 0px" }}
+						>
+							By signing up, you agree to out Terms, <br /> privacy policy and
+							cookies policy.
+						</p>
+
+						<div class="link">
+							<input
+								type="submit"
+								className="inputsingin"
+								style={{
+									backgroundColor: "#0d65d9",
+									color: "white",
+									fontSize: "1.4rem",
+									fontWeight: 500,
+									cursor: "pointer",
+								}}
+								id="submit-btn"
+								value="Sign Up"
+								onClick={() => {
+									postData();
+								}}
+							/>
+						</div>
 					</div>
-					<GoogleLogin
-						onSuccess={socialAuth}
-						onError={() => {
-							console.log('Login Failed');
-						}}
-					/>
-					<p
-						className="loginPara"
-						style={{ fontSize: "12px", margin: "3px 0px" }}
-					>
-						By signing up, you agree to out Terms, <br /> privacy policy and
-						cookies policy.
-					</p>
-					<input type="submit" id="submit-btn" value="Sign Up" onClick={() => { postData() }} />
-				</div>
-				<div className="form2">
-					Already have an account ?
-					<Link to="/signin">
-						<span style={{ color: "blue", cursor: "pointer" }}>Sign In</span>
-					</Link>
+
+					<div className="loginForm2">
+						Already have an account ?
+						<Link to="/signin">
+							<span style={{ color: "blue", cursor: "pointer" }}>Sign In</span>
+						</Link>
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }

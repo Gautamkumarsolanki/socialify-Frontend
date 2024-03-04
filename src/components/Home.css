@@ -1,5 +1,5 @@
 .card{
-    max-width: 500px;
+    max-width: 750px;
     height: max-content;
     margin: 25px auto;
     border: 1px solid rgb(173, 173, 173);
@@ -31,7 +31,11 @@
     text-align: left;
     line-height: 4px;
     padding: 3px 10px;
-    border-bottom: 1px solid rgb(173, 173, 173)
+    border-bottom: 1px solid rgb(173, 173, 173);
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .add-comment{

@@ -25,6 +25,7 @@ export default function Modal({ setModalOpen }) {
                 onClick={() => {
                   setModalOpen(false);
                   localStorage.clear();
+                  window.location.reload();
                   navigate("./signin");
                 }}
               >
