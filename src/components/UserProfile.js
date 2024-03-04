@@ -26,7 +26,7 @@ export default function UserProfie() {
   console.log(user);
   // to follow user
   const followUser = (userId) => {
-    fetch("http://localhost:5000/follow", {
+    fetch("https://socialifyfrontend.onrender.com/follow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export default function UserProfie() {
 
   // to unfollow user
   const unfollowUser = (userId) => {
-    fetch("http://localhost:5000/unfollow", {
+    fetch("https://socialifyfrontend.onrender.com/unfollow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export default function UserProfie() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${userid}`, {
+    fetch(`https://socialifyfrontend.onrender.com/user/${userid}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },

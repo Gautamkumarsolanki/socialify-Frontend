@@ -67,7 +67,7 @@ export default function Createpost() {
         newData["id"]=state.postData._id
       }
       if (Object.keys(newData).length > 0) {
-        const url = state.postData === null ? "http://localhost:5000/createPost" : `http://localhost:5000/edit-post/${state.postData._id}`;
+        const url = state.postData === null ? "https://socialifyfrontend.onrender.com/createPost" : `https://socialifyfrontend.onrender.com/edit-post/${state.postData._id}`;
         const method = state.postData === null ? "post" : "put";
         console.log(url, method);
         fetch(url, {

@@ -10,7 +10,7 @@ const MyConnections = () => {
   const { id } = useParams();
 
   const getFollowData = async () => {
-    const res = await fetch(`http://localhost:5000/getFollowData/${id}`, {
+    const res = await fetch(`https://socialifyfrontend.onrender.com/getFollowData/${id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       }

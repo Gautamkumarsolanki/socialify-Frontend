@@ -26,7 +26,7 @@ export default function SignIn() {
       return
     }
     // Sending data to server
-    fetch("http://localhost:5000/signin", {
+    fetch("https://socialifyfrontend.onrender.com/signin", {
       method: "post",
       headers: {
         "Content-Type": "application/json"
@@ -55,7 +55,7 @@ export default function SignIn() {
   const socialAuth = async (credentials) => {
     console.log(credentials.credential);
     try {
-      const res = await fetch("http://localhost:5000/social-auth", {
+      const res = await fetch("https://socialifyfrontend.onrender.com/social-auth", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

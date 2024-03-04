@@ -20,7 +20,7 @@ export default function Navbar({ login }) {
   useEffect(() => { });
   const searchApi = async (search) => {
     try {
-      const response = await fetch("http://localhost:5000/searchUsername", {
+      const response = await fetch("https://socialifyfrontend.onrender.com/searchUsername", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

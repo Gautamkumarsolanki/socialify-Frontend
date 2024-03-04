@@ -27,7 +27,7 @@ export default function ProfilePic({ changeprofile, data }) {
   const postPic = (url) => {
     // saving post to mongodb
     console.log(url);
-    fetch("http://localhost:5000/uploadProfilePic", {
+    fetch("https://socialifyfrontend.onrender.com/uploadProfilePic", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export default function ProfilePic({ changeprofile, data }) {
     }
     console.log("bject");
     if (name !== data.name || bio !== data.bio) {
-      await fetch("http://localhost:5000/edit-profile", {
+      await fetch("https://socialifyfrontend.onrender.com/edit-profile", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default function ProfilePic({ changeprofile, data }) {
 
     }
     if (userName !== data.userName) {
-      await fetch("http://localhost:5000/update-username", {
+      await fetch("https://socialifyfrontend.onrender.com/update-username", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
