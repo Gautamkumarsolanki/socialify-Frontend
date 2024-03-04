@@ -13,11 +13,11 @@ import Avatar from "@mui/material/Avatar";
 // import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FaceIcon from "@mui/icons-material/Face";
 export default function Navbar({ login }) {
-  let userData = [];
+  // let userData = [];
   const { setModalOpen } = useContext(LoginContext);
   const [search, setSearch] = useState("");
   const [searchData, setSearchData] = useState([]);
-  const [userdataname, setNamedata] = useState();
+  const [userdataname] = useState();
   useEffect(() => { });
   const searchApi = async (search) => {
     try {

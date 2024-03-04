@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import logo from "../img/navbarlogo.png";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -18,8 +17,8 @@ export default function SignUp() {
 	const notifyA = (msg) => toast.error(msg)
 	const notifyB = (msg) => toast.success(msg)
 
-	const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+	const emailRegex = /^\w+([/.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
+	const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#/$%/^&/*])(?=.{8,})/
 
 	const postData = () => {
 		//checking email
